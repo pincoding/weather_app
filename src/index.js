@@ -1,10 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import Router from './Router';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { GlobalStyles } from './GlobalStyles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient()
+
 root.render(
+  
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <GlobalStyles />
+      <Router />
+    </QueryClientProvider>
   </React.StrictMode>
 );
