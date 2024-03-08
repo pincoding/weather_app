@@ -16,3 +16,6 @@ root.render(
     </QueryClientProvider>
   </React.StrictMode>
 );
+// git add .
+// git commit -m ""
+// git push origin main

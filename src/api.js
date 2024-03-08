@@ -21,12 +21,16 @@ const instance  = axios.create({
 
 
 
-export const getWeather = () => {
-    const lat = 37.571211385077554;
+export const getWeather = ({queryKey}) => {
+    // const lat = 37.571211385077554;
+    // const lon = 126.98111787255725;
     //구글에 위도 경도 검색 : https://www.findlatlng.org/
-    const lon = 126.98111787255725;
 
-    return instance.get(`weather?lat=${lat}&lon=${lon}`).then(res => res.data)
+
+    const [weather, lat , lon] = queryKey;
+
+    // console.log(queryKey)
+    return instance.get(`${weather}?lat=${lat}&lon=${lon}`).then(res => res.data)
     // ? : 요청하다
     //.then() : 그리고 난 다음에
 };
